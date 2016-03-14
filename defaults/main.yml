@@ -1,0 +1,8 @@
+pgrestapi_install_path: /home/{{username}}
+pgrestapi_settings_template_path: ../templates/settings.js
+pgrestapi_port: 3001
+pgrestapi_db_read_username: pgrestapi
+pgrestapi_db_read_password: not_secure
+pgrestapi_db_host: 127.0.01
+pgrestapi_db_port: 5432
+pgrestapi_db_name: pgrestapi
