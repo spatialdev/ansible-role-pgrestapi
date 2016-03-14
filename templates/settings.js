@@ -18,7 +18,7 @@ settings.application.port = '{{pgrestapi_port}}';
 
 //Settings for postgres DB
 settings.pg.username = '{{pgrestapi_db_read_username}}';
-settings.pg.password = '{{pgresetapi_db_read_password}}';
+settings.pg.password = '{{pgrestapi_db_read_password}}';
 settings.pg.server = '{{pgrestapi_db_host}}';
 settings.pg.port = '{{pgrestapi_db_port}}';
 settings.pg.database = '{{pgrestapi_db_name}}';
