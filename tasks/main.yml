@@ -3,17 +3,14 @@
   register: repo
 
 - name: Clone PGRestAPI if not found
-  become_user: "{{username}}"
   shell: (cd {{pgrestapi_install_path}} && git clone https://github.com/spatialdev/PGRestAPI.git)
   when: repo.stat.exists == False
 
 - name: Get latest PGRestAPI repo master branch
-  become_user: "{{username}}"
   shell: (cd {{pgrestapi_install_path}}/PGRestAPI && git pull origin master)
   when: repo.stat.exists == True
 
 - name: Install PGRestAPI
-  become_user: "{{username}}"
   shell: (cd {{pgrestapi_install_path}}/PGRestAPI && npm install)
 
 - name: Confgure settings.js file
