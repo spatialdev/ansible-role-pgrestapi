@@ -1,14 +1,10 @@
-- name: Determine if PGRestAPI already cloned
-  stat: path={{pgrestapi_install_path}}/PGRestAPI/.git
-  register: repo
+- name: git checkout PGRestAPI repository
+  git:
+    accept_hostkey: yes
+    repo: "git@github.com:spatialdev/PGRestAPI.git"
+    dest: "{{ pgrestapi_install_path }}/PGRestAPI"
+    version: "{{ pgrestapi_version }}"
 
-- name: Clone PGRestAPI if not found
-  shell: (cd {{pgrestapi_install_path}} && git clone https://github.com/spatialdev/PGRestAPI.git)
-  when: repo.stat.exists == False
-
-- name: Get latest PGRestAPI repo master branch
-  shell: (cd {{pgrestapi_install_path}}/PGRestAPI && git pull origin master)
-  when: repo.stat.exists == True
 
 - name: Install PGRestAPI
   shell: (cd {{pgrestapi_install_path}}/PGRestAPI && npm install)
