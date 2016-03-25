@@ -1,3 +1,4 @@
+pgrestapi_repo: "https://github.com/spatialdev/PGRestAPI.git"
 pgrestapi_install_path: /home/{{username}}
 pgrestapi_version: master
 pgrestapi_settings_template_path: ../templates/settings.js

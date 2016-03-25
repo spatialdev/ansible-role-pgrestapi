@@ -1,7 +1,7 @@
 - name: git checkout PGRestAPI repository
   git:
     accept_hostkey: yes
-    repo: "git@github.com:spatialdev/PGRestAPI.git"
+    repo: "{{ pgrestapi_repo }}"
     dest: "{{ pgrestapi_install_path }}/PGRestAPI"
     version: "{{ pgrestapi_version }}"
 
